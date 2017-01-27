@@ -6,10 +6,7 @@
 package grafos2;
 
 import com.vista.UI;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,12 +20,12 @@ public class Grafos2 {
     public static void main(String[] args) {
         try {
             // TODO code application logic here
-            UI ui = new UI();
+            UI automatonUi = new UI();
 //            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
 //            SwingUtilities.updateComponentTreeUI(ui);
-            ui.setVisible(true);
+            automatonUi.setVisible(true);
         } catch (Exception ex) {
-            Logger.getLogger(Grafos2.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(null, ex, "Error", JOptionPane.ERROR_MESSAGE);
         }
     }
     

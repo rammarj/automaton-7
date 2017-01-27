@@ -14,19 +14,19 @@ import java.util.LinkedList;
 public class AFD5 extends AFD4{
 
     public AFD5() {
-        //configuracion de transiciones
+        //configuracion de transitions
         LinkedList<String> empieza = new LinkedList<>();
         empieza.add("1");
         
         LinkedList<String> termina = new LinkedList<>();
         termina.add("1");
         
-        this.transiciones.setEmpieza(empieza);
-        this.transiciones.setTermina(termina);
+        this.transitions.setStartStates(empieza);
+        this.transitions.setEndStates(termina);
     }
     
     @Override
-    public int getAL_ID() {
+    public int getAutomatonId() {
         return AFD_V;
     }
     

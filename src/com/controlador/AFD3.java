@@ -11,17 +11,17 @@ import java.util.LinkedList;
  *
  * @author Joaquin R. Martinez
  */
-public class AFD3 extends AFDs implements Automata{
+public class AFD3 extends FiniteAutomaton implements Automaton{
 
     public AFD3() {
         super("");
-        //configuracion de transiciones
-        this.transiciones.addTransicion("1", "a", "1");
-        this.transiciones.addTransicion("1", "b", "2");
-        this.transiciones.addTransicion("2", "a", "3");
-        this.transiciones.addTransicion("2", "b", "2");
-        this.transiciones.addTransicion("3", "a", "3");
-        this.transiciones.addTransicion("3", "b", "3");
+        //configuracion de transitions
+        this.transitions.addTransition("1", "a", "1");
+        this.transitions.addTransition("1", "b", "2");
+        this.transitions.addTransition("2", "a", "3");
+        this.transitions.addTransition("2", "b", "2");
+        this.transitions.addTransition("3", "a", "3");
+        this.transitions.addTransition("3", "b", "3");
         
         LinkedList<String> empieza = new LinkedList<>();
         empieza.add("1");
@@ -30,12 +30,12 @@ public class AFD3 extends AFDs implements Automata{
         termina.add("1");
         termina.add("2");
         
-        this.transiciones.setEmpieza(empieza);
-        this.transiciones.setTermina(termina);
+        this.transitions.setStartStates(empieza);
+        this.transitions.setEndStates(termina);
     }
     
     @Override
-    public int getAL_ID() {
+    public int getAutomatonId() {
         return AFD_III;
     }
     

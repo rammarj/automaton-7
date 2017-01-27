@@ -11,22 +11,22 @@ import java.util.LinkedList;
  *
  * @author Joaquin R. Martinez
  */
-public class AFD6 extends AFDs{
+public class AFD6 extends FiniteAutomaton{
 
     public AFD6() {
         super("");
-        //configuracion de transiciones
-        this.transiciones.addTransicion("1", "a", "4");
-        this.transiciones.addTransicion("1", "b", "2");
-        this.transiciones.addTransicion("2", "a", "4");
-        this.transiciones.addTransicion("2", "b", "3");
-        this.transiciones.addTransicion("3", "a", "4");
-        //this.transiciones.addTransicion("3", "b", "5");
-        this.transiciones.addTransicion("4", "a", "1");
-        this.transiciones.addTransicion("4", "b", "5");
-        this.transiciones.addTransicion("5", "a", "1");
-        this.transiciones.addTransicion("5", "b", "6");
-        this.transiciones.addTransicion("6", "a", "1");
+        //configuracion de transitions
+        this.transitions.addTransition("1", "a", "4");
+        this.transitions.addTransition("1", "b", "2");
+        this.transitions.addTransition("2", "a", "4");
+        this.transitions.addTransition("2", "b", "3");
+        this.transitions.addTransition("3", "a", "4");
+        //this.transitions.addTransition("3", "b", "5");
+        this.transitions.addTransition("4", "a", "1");
+        this.transitions.addTransition("4", "b", "5");
+        this.transitions.addTransition("5", "a", "1");
+        this.transitions.addTransition("5", "b", "6");
+        this.transitions.addTransition("6", "a", "1");
         
         LinkedList<String> empieza = new LinkedList<>();
         empieza.add("1");
@@ -36,12 +36,12 @@ public class AFD6 extends AFDs{
         termina.add("2");
         termina.add("3");
         
-        this.transiciones.setEmpieza(empieza);
-        this.transiciones.setTermina(termina);
+        this.transitions.setStartStates(empieza);
+        this.transitions.setEndStates(termina);
     }
     
     @Override
-    public int getAL_ID() {
+    public int getAutomatonId() {
         return AFD_VI;
     }
     

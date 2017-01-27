@@ -103,7 +103,7 @@ public class UI extends JFrame implements ActionListener {
     }
 
     void btn_info_click() {
-        AFDs afd;
+        FiniteAutomaton afd;
         this.strb.replace(0, this.strb.length(), "");
         this.strb.append("<DOCTYPE html><head>"+
                 "<style>div{border: 5px;color:black;padding-bottom: 15px; font-family: sans-serif;\n" +
@@ -111,31 +111,31 @@ public class UI extends JFrame implements ActionListener {
                 + "</head><html><body>");
         try {
             afd = new AFD1();
-            afd.setEval(this.txt_lenguaje.getText());
+            afd.evaluate(this.txt_lenguaje.getText());
             comprobar(afd,1);
             
             afd = new AFD2();
-            afd.setEval(this.txt_lenguaje.getText());
+            afd.evaluate(this.txt_lenguaje.getText());
             comprobar(afd,2);
             
             afd = new AFD3();
-            afd.setEval(this.txt_lenguaje.getText());
+            afd.evaluate(this.txt_lenguaje.getText());
             comprobar(afd,3);
             
             afd = new AFD4();
-            afd.setEval(this.txt_lenguaje.getText());
+            afd.evaluate(this.txt_lenguaje.getText());
             comprobar(afd,4);
             
             afd = new AFD5();
-            afd.setEval(this.txt_lenguaje.getText());
+            afd.evaluate(this.txt_lenguaje.getText());
             comprobar(afd,5);
             
             afd = new AFD6();
-            afd.setEval(this.txt_lenguaje.getText());
+            afd.evaluate(this.txt_lenguaje.getText());
             comprobar(afd,6);
             
             afd = new AFD7();
-            afd.setEval(this.txt_lenguaje.getText());
+            afd.evaluate(this.txt_lenguaje.getText());
             comprobar(afd,7);
             
         this.strb.append("</body></html>");
@@ -157,13 +157,13 @@ public class UI extends JFrame implements ActionListener {
         }
     }
 
-    void comprobar(AFDs afd, int id) {
+    void comprobar(FiniteAutomaton afd, int id) {
         this.strb.append("<div><span style='color:green;'>[+]</span>Testeando afd No. "+(id)+"<br>");
         afd.compile();
         if (afd.isAccepted()) {
             this.strb.append("<span style='color:green;'>[+]</span><span style='color:blue'> Aceptado");
         } else {
-            this.strb.append("<span style='color:red;'>[-]</span><span style='color:#ff9933'> No aceptado. " + afd.getMsg_error()+"</span>");
+            this.strb.append("<span style='color:red;'>[-]</span><span style='color:#ff9933'> No aceptado. " + afd.getErrorMessage()+"</span>");
         }
         this.strb.append("</div>");
     }
