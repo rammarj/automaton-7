@@ -1,4 +1,4 @@
-package controlador;
+package controller;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -20,13 +20,10 @@ public class Util {
     }
     
     public static List<String> reversa(List<String> in){
-        LinkedList<String> rev = new LinkedList<>();
-        in.stream().map((next) -> new StringBuffer(next)).map((stringBuffer) -> {
+        List<String> rev = in.stream().map((next) -> new StringBuffer(next)).map((stringBuffer) -> {
             stringBuffer.reverse();
-            return stringBuffer;
-        }).forEach((stringBuffer) -> {
-            rev.add(stringBuffer.toString());
-        });
+            return stringBuffer.toString();
+        }).toList();
         return rev;
     }
     

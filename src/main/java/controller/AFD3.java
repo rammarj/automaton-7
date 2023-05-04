@@ -1,4 +1,4 @@
-package controlador;
+package controller;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -7,19 +7,17 @@ import java.util.List;
  *
  * @author Joaquin R. Martinez
  */
-public class AFD7 extends FiniteAutomaton{
+public class AFD3 extends FiniteAutomaton implements Automaton{
 
-    public AFD7() {
+    public AFD3() {
         super("");
         //configuracion de transitions
-        this.transitions.addTransition("1", "a", "2");
-        this.transitions.addTransition("1", "b", "1");
-        this.transitions.addTransition("2", "a", "4");
+        this.transitions.addTransition("1", "a", "1");
+        this.transitions.addTransition("1", "b", "2");
+        this.transitions.addTransition("2", "a", "3");
         this.transitions.addTransition("2", "b", "2");
-        this.transitions.addTransition("3", "a", "2");
-        this.transitions.addTransition("3", "b", "4");
-        this.transitions.addTransition("4", "a", "3");
-        this.transitions.addTransition("4", "b", "1");
+        this.transitions.addTransition("3", "a", "3");
+        this.transitions.addTransition("3", "b", "3");
         
         List<String> empieza = new LinkedList<>();
         empieza.add("1");
@@ -27,7 +25,6 @@ public class AFD7 extends FiniteAutomaton{
         List<String> termina = new LinkedList<>();
         termina.add("1");
         termina.add("2");
-        termina.add("4");
         
         this.transitions.setStartStates(empieza);
         this.transitions.setEndStates(termina);
@@ -35,7 +32,7 @@ public class AFD7 extends FiniteAutomaton{
     
     @Override
     public int getAutomatonId() {
-        return AFD_VII;
+        return AFD_III;
     }
     
 }

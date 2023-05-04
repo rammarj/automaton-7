@@ -1,4 +1,4 @@
-package controlador;
+package controller;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -38,7 +38,6 @@ public class Transition {
 
 	public String existTransition(String state, String simbol) {
 		for (State currentSimbol : this.states) {
-			// System.out.println(currentSimbol.getTransition());
 			if (currentSimbol.getName().equals(state) && currentSimbol.getSimbol().equals(simbol)) {
 				return currentSimbol.getTransition();
 			}

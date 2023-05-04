@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package vista;
+package view;
 
-import controlador.*;
 import java.awt.Font;
 import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
@@ -14,6 +13,8 @@ import java.io.File;
 import java.io.FileWriter;
 import javax.swing.*;
 import javax.swing.text.html.HTMLEditorKit;
+
+import controller.*;
 
 /**
  *
