@@ -24,9 +24,6 @@
 						</manifest>
 					</archive>
 				</configuration>
-				<!-- Here come other details
-        ...
-        -->
 			</plugin>
 		</plugins>
 	</build>

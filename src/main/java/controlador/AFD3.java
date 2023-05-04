@@ -1,6 +1,7 @@
 package controlador;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -18,10 +19,10 @@ public class AFD3 extends FiniteAutomaton implements Automaton{
         this.transitions.addTransition("3", "a", "3");
         this.transitions.addTransition("3", "b", "3");
         
-        LinkedList<String> empieza = new LinkedList<>();
+        List<String> empieza = new LinkedList<>();
         empieza.add("1");
         
-        LinkedList<String> termina = new LinkedList<>();
+        List<String> termina = new LinkedList<>();
         termina.add("1");
         termina.add("2");
         

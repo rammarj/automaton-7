@@ -6,13 +6,13 @@ package controlador;
  */
 public interface Automaton {
     
-    public static final int AFD_I = 0;
-    public static final int AFD_II = 0;
-    public static final int AFD_III = 0;
-    public static final int AFD_IV = 0;
-    public static final int AFD_V = 0;
-    public static final int AFD_VI = 0;
-    public static final int AFD_VII = 0;
+    public static final int AFD_I = 1;
+    public static final int AFD_II = 2;
+    public static final int AFD_III = 3;
+    public static final int AFD_IV = 4;
+    public static final int AFD_V = 5;
+    public static final int AFD_VI = 6;
+    public static final int AFD_VII = 7;
     
     void compile();
     boolean isAccepted();

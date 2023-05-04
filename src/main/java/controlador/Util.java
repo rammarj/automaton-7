@@ -2,6 +2,7 @@ package controlador;
 
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -9,25 +10,16 @@ import java.util.LinkedList;
  */
 public class Util {
 
-    public static String serializar(LinkedList<String> str) {
-        StringBuffer a = new StringBuffer();
-        a.append("{ ");
-        str.stream().forEach((next) -> {
-            a.append(next).append(", ");
-        });
-        a.delete(a.length() - 2, a.length());
-        a.append(" }");
-        return a.toString();
+    public static String serializar(List<String> str) {
+        return String.format("{ %s }", String.join(", ", str));
     }
 
-    public static LinkedList<String> dividir(String input) {
-        LinkedList<String> a = new LinkedList<>();
+    public static List<String> dividir(String input) {
         String[] split = input.split("\n");
-        a.addAll(Arrays.asList(split));
-        return a;
+        return Arrays.asList(split);
     }
     
-    public static LinkedList<String> reversa(LinkedList<String> in){
+    public static List<String> reversa(List<String> in){
         LinkedList<String> rev = new LinkedList<>();
         in.stream().map((next) -> new StringBuffer(next)).map((stringBuffer) -> {
             stringBuffer.reverse();
@@ -38,7 +30,7 @@ public class Util {
         return rev;
     }
     
-    public static LinkedList<String> prefijos(String in){
+    public static List<String> prefijos(String in){
         LinkedList<String> lista = new LinkedList<>();
         for (int i = 0; i <= in.length(); i++) {
             lista.add((i+1)+") "+in.substring(0, i));            
@@ -46,7 +38,7 @@ public class Util {
         return lista;
     }
     
-    public static LinkedList<String> sufijos(String in){
+    public static List<String> sufijos(String in){
         LinkedList<String> lista = new LinkedList<>();
         for (int i = in.length(); i >=0; i--) {
             lista.add((i+1)+") "+in.substring(i, in.length()));            

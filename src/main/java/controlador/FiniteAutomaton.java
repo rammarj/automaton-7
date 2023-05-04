@@ -12,7 +12,7 @@ public class FiniteAutomaton implements Automaton{
     protected int errorSimbol;
     protected String errorMessage;
     
-    FiniteAutomaton(String eval) {
+    protected FiniteAutomaton(String eval) {
         this.evaluatedString = "";
         this.errorMessage = "";
         this.accepted = true;
@@ -28,14 +28,13 @@ public class FiniteAutomaton implements Automaton{
     @Override
     public void compile() {
         for (String empieza : this.transitions.getStartStates()) {
-            boolean compile_ = compile_(empieza);
-            if (compile_) {
+            if (_compile(empieza)) {
                 break;
             }
         }
     }
 
-    private boolean compile_(String empieza){
+    private boolean _compile(String empieza){
         int i = 0;
         String[] split = this.evaluatedString.split("");
         boolean end_ok = false;
@@ -70,7 +69,7 @@ public class FiniteAutomaton implements Automaton{
     @Override
     public void evaluate(String eval) {
         if (eval == null) {
-            throw  new NullPointerException("The evaluated language does not be null");
+            throw  new NullPointerException("The evaluated language must not be null");
         }
         this.evaluatedString = eval;
     }

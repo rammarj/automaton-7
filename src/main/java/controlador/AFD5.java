@@ -1,6 +1,7 @@
 package controlador;
 
 import java.util.LinkedList;
+import java.util.List;
 
 /**
  *
@@ -10,10 +11,10 @@ public class AFD5 extends AFD4{
 
     public AFD5() {
         //configuracion de transitions
-        LinkedList<String> empieza = new LinkedList<>();
+        List<String> empieza = new LinkedList<>();
         empieza.add("1");
         
-        LinkedList<String> termina = new LinkedList<>();
+        List<String> termina = new LinkedList<>();
         termina.add("1");
         
         this.transitions.setStartStates(empieza);
